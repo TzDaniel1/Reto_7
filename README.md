@@ -9,8 +9,7 @@ while i <= 100:
     i += 1
 ```
 
-```
-flowchart TD
+```flowchart TD
 A(Inicio)-->B[i=1]
 B-->C{i<=100}
 C-->|si|D[Numero: i. Cuadrado: i**2]
