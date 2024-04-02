@@ -104,23 +104,76 @@ print(f"En el año {2022 + anio} la población del país B ({poblacion_b:.2f} mi
 ### 5. Imprimir el factorial de un número natural n dado.
 
 ```
+n = int(input("Ingrese un número natural para calcular su factorial: "))
+factorial = 1
 
+if n >= 0:
+    i = 1
+    while i <= n:
+        factorial *= i
+        i += 1
+
+    print(f"El factorial de {n} es {factorial}")
+else:
+    print("El número ingresado no es válido.")
 ```
 
 ### 6. Implementar un algoritmo que permita adivinar un número dado de 1 a 100, preguntando en cada caso si el número es mayor, menor o igual.
 
 ```
+print("Piensa en un número del 1 al 100 y yo trataré de adivinarlo.")
+inferior = 1
+superior = 100
+respuesta = ""
 
+while respuesta != "igual":
+    intento = (inferior + superior) // 2
+    respuesta = input(f"¿Es {intento} mayor, menor o igual al número que pensaste? ").lower()
+
+    if respuesta == "mayor":
+        inferior = intento + 1
+    elif respuesta == "menor":
+        superior = intento - 1
+    elif respuesta != "igual":
+        print("Por favor, ingresa 'mayor', 'menor' o 'igual'.")
+
+print(f"¡Adiviné! Tu número es {intento}.")
 ```
 
 ### 7. Implementar un programa que ingrese un número de 2 a 50 y muestre sus divisores.
 
 ```
+numero = int(input("Ingrese un número entre 2 y 50: "))
 
+if 2 <= numero <= 50:
+    print(f"Los divisores de {numero} son:")
+    divisor = 1
+    while divisor <= numero:
+        if numero % divisor == 0:
+            print(divisor)
+        divisor += 1
+else:
+    print("El número ingresado no está dentro del rango válido.")
 ```
 
 ### 8. Implementar el algoritmo que muestre los números primos del 1 al 100. Nota: use funciones
 
 ```
+print("Números primos del 1 al 100:")
+num = 2
 
+while num <= 100:
+    divisor = 2
+    primo = True
+
+    while divisor < num:
+        if num % divisor == 0:
+            primo = False
+            break
+        divisor += 1
+
+    if primo:
+        print(num)
+
+    num += 1
 ```
